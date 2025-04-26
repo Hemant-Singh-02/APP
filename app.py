@@ -3,9 +3,10 @@ from pydantic import BaseModel
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
+
 # Load model and tokenizer once
-tokenizer = BertTokenizer.from_pretrained('spam-bert-custom')
-model = BertForSequenceClassification.from_pretrained('spam-bert-custom')
+tokenizer = BertTokenizer.from_pretrained('fzn0x/bert-spam-classification-model')
+model = BertForSequenceClassification.from_pretrained('fzn0x/bert-spam-classification-model')
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 model.eval()
